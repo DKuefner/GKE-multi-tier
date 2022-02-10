@@ -1,3 +1,5 @@
+This repository is a clone from https://github.com/velotio-tech/GKE-and-Sample-App and will be used for training purposes only.
+
 # GKE-and-Sample-App
 
 ## What is GKE?
