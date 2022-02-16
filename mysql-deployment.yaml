@@ -1,49 +1,33 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql
 spec:
-  template:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: mysql
+  template:      
     metadata:
-      labels:
-        app: mysql
+        labels:
+          name: mysql    
     spec:
-      containers:
-      - env:
-        - name: MYSQL_DATABASE
-          value: admin
-        - name: MYSQL_ROOT_PASSWORD
-          value: admin
-        image: mysql:latest
-        name: mysql
-        ports:
-        - name: mysqlport
-          containerPort: 3306
-          protocol: TCP
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: mysql-pv-volume
-  labels:
-    type: local
-spec:
-  storageClassName: manual
-  capacity:
-    storage: 20Gi
-  accessModes:
-    - ReadWriteOnce
-hostPath:
-  path: "/mnt/data"
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: mysql-pv-claim
-spec:
-  storageClassName: manual
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 20Gi
+        containers:
+          - env:
+            - name: MYSQL_DATABASE
+              value: admin
+            - name: MYSQL_ROOT_PASSWORD
+              value: admin
+            image: mysql:latest
+            name: mysql
+            ports:
+            - name: mysqlport
+              containerPort: 3306
+              protocol: TCP
+            volumeMounts:
+              - mountPath: /var/lib/mysql
+                name: mysql-volume
+        volumes:
+          - name: mysql-volume
+            persistentVolumeClaim:
+              claimName: mysql-pv-claim
