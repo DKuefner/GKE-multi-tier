@@ -15,7 +15,7 @@ spec:
         containers:
           - env:
             - name: MYSQL_DATABASE
-              value: admin
+              value: Electronics
             - name: MYSQL_ROOT_PASSWORD
               value: admin
             image: mysql:latest
