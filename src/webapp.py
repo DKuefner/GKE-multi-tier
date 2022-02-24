@@ -70,7 +70,7 @@ def store_data():
         print("Now inserting into table")
         connection = mysql.connector.connect(host="localhost",
                 database="Electronics",
-                user="admin",
+                user="root",
                 password="admin",auth_plugin='mysql_native_password')
         cursor = connection.cursor()
         cursor.execute("insert into employee values (%s, '%s')"%(request.form['id'], request.form['name']))
@@ -93,7 +93,7 @@ def get_data(id):
     try:
         connection = mysql.connector.connect(host="localhost",
                 database="Electronics",
-                user="admin",
+                user="root",
                 password="admin",auth_plugin='mysql_native_password')
         cursor = connection.cursor()
         cursor.execute(select)
@@ -105,5 +105,5 @@ def get_data(id):
 
 
 if __name__ == '__main__':
-    db_init(host="mysql-service.default", user="admin", passwd="admin", db="Electronics")
+    db_init(host="mysql-service.default", user="root", passwd="admin", db="Electronics")
     app.run(host="0.0.0.0", port=5000)
