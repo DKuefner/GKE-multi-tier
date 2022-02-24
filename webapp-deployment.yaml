@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: web-app
-        image: gcr.io/eso-cloud-infra-01/team2/webapp:0.10
+        image: gcr.io/eso-cloud-infra-01/team2/webapp:0.11
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
