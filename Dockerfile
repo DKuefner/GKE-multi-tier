@@ -9,4 +9,4 @@ RUN mkdir /code
 COPY src /code
 WORKDIR /code
 EXPOSE 5000
-ENTRYPOINT ["python", "app.py"]
+ENTRYPOINT ["python", "webapp.py"]
