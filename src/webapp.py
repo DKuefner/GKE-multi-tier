@@ -105,5 +105,5 @@ def get_data(id):
 
 
 if __name__ == '__main__':
-    db_init(host="mysql-service.default", user="root", passwd="admin", db="Electronics")
+    db_init(host="mysql-service.default.svc.cluster.local", user="root", passwd="admin", db="Electronics")
     app.run(host="0.0.0.0", port=5000)
