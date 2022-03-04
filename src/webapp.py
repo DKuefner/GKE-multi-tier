@@ -37,6 +37,7 @@ def db_init(host, user, passwd, db):
     Initialize the database by creating employee table
     """
     try:
+        print("Now initializing database")
         connection = mysql.connector.connect(host=host,
                 database=db,
                 user=user,
@@ -68,7 +69,7 @@ def store_data():
     msg=''
     try:
         print("Now inserting into table")
-        connection = mysql.connector.connect(host="localhost",
+        connection = mysql.connector.connect(host="mysql-service.default.svc.cluster.local",
                 database="Electronics",
                 user="root",
                 password="admin",auth_plugin='mysql_native_password')
@@ -91,7 +92,7 @@ def get_data(id):
     msg=''
     select = "select * from employee where id=%d" %(id)
     try:
-        connection = mysql.connector.connect(host="localhost",
+        connection = mysql.connector.connect(host="mysql-service.default.svc.cluster.local",
                 database="Electronics",
                 user="root",
                 password="admin",auth_plugin='mysql_native_password')
