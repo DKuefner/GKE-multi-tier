@@ -69,7 +69,7 @@ def store_data():
     msg=''
     try:
         print("Now inserting into table")
-        connection = mysql.connector.connect(host="mysql-service.default.svc.cluster.local",
+        connection = mysql.connector.connect(host="mysql-service.default",
                 database="Electronics",
                 user="root",
                 password="admin",auth_plugin='mysql_native_password')
@@ -92,7 +92,7 @@ def get_data(id):
     msg=''
     select = "select * from employee where id=%d" %(id)
     try:
-        connection = mysql.connector.connect(host="mysql-service.default.svc.cluster.local",
+        connection = mysql.connector.connect(host="mysql-service.default",
                 database="Electronics",
                 user="root",
                 password="admin",auth_plugin='mysql_native_password')
@@ -106,5 +106,5 @@ def get_data(id):
 
 
 if __name__ == '__main__':
-    db_init(host="mysql-service.default.svc.cluster.local", user="root", passwd="admin", db="Electronics")
+    db_init(host="mysql-service.default", user="root", passwd="admin", db="Electronics")
     app.run(host="0.0.0.0", port=5000)
