@@ -18,7 +18,9 @@ spec:
               value: Electronics
             - name: MYSQL_ROOT_PASSWORD
               value: admin
-            image: mysql:latest
+            image: mysql:5.7
+            args:
+              - "--ignore-db-dir=lost+found"
             name: mysql
             ports:
             - name: mysqlport
