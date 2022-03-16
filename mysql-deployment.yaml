@@ -6,11 +6,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      name: mysql
+      run: mysql
   template:      
     metadata:
         labels:
-          name: mysql    
+          run: mysql    
     spec:
         containers:
           - env:
