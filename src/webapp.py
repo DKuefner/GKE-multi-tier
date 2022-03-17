@@ -4,6 +4,7 @@ This app will run in one container and will connect
 with MySQL database running as another container using service name
 """
 
+from tkinter import W
 from flask import Flask, request
 app = Flask(__name__)
 import mysql.connector
@@ -99,7 +100,10 @@ def get_data(id):
         cursor = connection.cursor()
         cursor.execute(select)
         res = cursor.fetchone()
-        msg = "Employee Details ID : %d  Name : %s"%(res[0], res[1])
+        if cursor.rowcount:
+          msg = "Employee Details ID : %d  Name : %s\n" %(res[0], res[1])
+        else:
+          msg = "Data for Employee ID : %d not present\n" %(id)
     except Exception as msg:
         print("Exception : ", msg)
     return msg
