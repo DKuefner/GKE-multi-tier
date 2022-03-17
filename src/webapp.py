@@ -3,8 +3,6 @@ Simple Python App to demonstrate delpoyment using GKE
 This app will run in one container and will connect
 with MySQL database running as another container using service name
 """
-
-from tkinter import W
 from flask import Flask, request
 app = Flask(__name__)
 import mysql.connector
