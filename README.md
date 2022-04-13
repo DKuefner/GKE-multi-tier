@@ -35,5 +35,5 @@ Services:
   * mysql-service.yaml
 * Web app Service
   * webapp-service.yaml
-* Persistent Disk (GCE  Storage  Disks)
+* Persistent Disk (GCE \> Storage \> Disks)
   * pdName: team2-pd
