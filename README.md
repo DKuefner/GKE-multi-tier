@@ -1,6 +1,6 @@
 # Muli Tier App on GKE
 
-Based on : [GKE and Sample App] (https://github.com/velotio-tech/GKE-and-Sample-App)
+Based on : [GKE and Sample App](https://github.com/velotio-tech/GKE-and-Sample-App)
 
 Simple two tier demo app with webapp as frontend and MySQL as backend.
 This app is intended as a demo and to be deployed on a specific GKE environment, however, it can be easily adopted to run on other Kubernetes environments.
