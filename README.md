@@ -14,16 +14,16 @@ GKE Autopilot Cluster
 How to deploy app to Autopilot Cluster
  
 Deployments
-    Volumes
-        mysql-pv.yaml
-    MySQL-DB
-        mysql-deployment.yaml
-    Web app
-        webapp-deployment.yaml
+* Volumes
+    +mysql-pv.yaml
+*MySQL-DB
+    +mysql-deployment.yaml
+*Web app
+    +webapp-deployment.yaml
 Services
-    MySQL Service
-        mysql-service.yaml
-    Web app Service
-        webapp-service.yaml
+*MySQL Service
+    +mysql-service.yaml
+*Web app Service
+    +webapp-service.yaml
 Persistent Disk (GCE  Storage  Disks)
-    pdName: team2-pd
+*pdName: team2-pd
